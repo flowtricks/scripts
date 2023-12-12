@@ -1,9 +1,9 @@
 /**
- * Dark Mode Toggle 1.0.0
+ * Dark Mode Toggle 1.0.1
  * Copyright 2023 Timothy Ricks
  * Released under the MIT License
  * Released on: November 28, 2023
-*/
+ */
 
 function colorModeToggle() {
   function attr(defaultVal, attrVal) {
@@ -58,7 +58,7 @@ function colorModeToggle() {
       gsap.to(htmlElement, {
         ...colorObject,
         duration: colorModeDuration,
-        ease: colorModeEase,
+        ease: colorModeEase
       });
     } else {
       Object.keys(colorObject).forEach(function (key) {
@@ -90,7 +90,9 @@ function colorModeToggle() {
     goDark(e.matches, false);
   }
   const colorPreference = window.matchMedia("(prefers-color-scheme: dark)");
-  colorPreference.addListener(checkPreference);
+  colorPreference.addEventListener("change", (e) => {
+    checkPreference(e);
+  });
 
   let storagePreference = localStorage.getItem("dark-mode");
   if (storagePreference !== null) {
