@@ -1,5 +1,5 @@
 /**
- * Dark Mode Toggle 1.0.1
+ * Dark Mode Toggle 1.0.2
  * Copyright 2023 Timothy Ricks
  * Released under the MIT License
  * Released on: November 28, 2023
